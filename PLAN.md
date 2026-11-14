@@ -11,7 +11,7 @@ Give backend and systems internship reviewers a quick introduction and concrete 
 3. **Selected work:** one featured OBMINNIK presentation with its real dashboard screenshot and engineering notes; compact BitTorrent and HTTP/1.1 projects with concrete implementation and testing details. Link directly to source repositories.
    Follow projects with a standalone **Technical Skills** section: languages, backend technologies, and tools used in personal projects and open-source work. Link it from the main navigation and keep it outside Education.
 4. **Open source:** a concise paragraph and link to the Linux AMD ACP6x DMI quirk for the Acer Nitro AN16-41, merged in November 2026. No code panel or oversized presentation.
-5. **About and education:** FEUP, degree in progress, expected January 2028 graduation, current average 16/20 in regular type; relevant languages and tools. Keep the biography focused on current work; omit current age and starting age as requested.
+5. **About and education:** FEUP, degree in progress, expected February 2028 graduation, current average 16/20 in regular type; relevant languages and tools. Keep the biography focused on current work; omit current age and starting age as requested.
 6. **Contact:** email, GitHub, LinkedIn, and the current downloadable résumé. No nonfunctional form, invented writing, testimonials, or availability dates.
 
 ## Visual direction
