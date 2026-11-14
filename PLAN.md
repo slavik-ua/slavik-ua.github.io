@@ -20,7 +20,7 @@ Give backend and systems internship reviewers a quick introduction and concrete 
 - Use a small inline SVG icon sprite, an optimized real project screenshot, and the user's optimized portrait. No icon library, external fonts, or runtime dependencies. No decorative project diagrams, Cloudflare logos, or copied marketing copy.
 - Show the user's name as the header identity, with a prominent orange “Copy profile for AI” button in the top bar. A public `llms.txt` contains only factual profile content and source links. This is a visitor convenience with no AI backend. Keep the section labels concise and omit decorative taglines.
 - Use small transitions only when reduced motion is not requested.
-- Primary buttons use white labels on a deeper orange for readable contrast. Add only a faint static CSS glow near the portrait. The copy confirmation clears after three seconds and on outside click or Escape.
+- Primary buttons use white labels on a deeper orange for readable contrast. No ambient glow near the portrait. The copy confirmation clears after three seconds and on outside click or Escape.
 - Responsive navigation, accessible keyboard interaction, clear focus states, semantic headings, and readable contrast.
 
 ## Implementation and hosting
