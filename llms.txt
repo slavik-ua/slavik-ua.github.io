@@ -11,8 +11,8 @@
 ## Selected personal projects
 
 - [OBMINNIK](https://github.com/slavik-ua/obminnik): Go trading platform with a limit order book, price-time priority, partial fills, cancellation, fixed-point settlement, PostgreSQL transactions, an outbox relay, Kafka-compatible Redpanda, Redis Pub/Sub, WebSockets, Prometheus, Grafana, and a Next.js dashboard.
-- [BitTorrent client](https://github.com/slavik-ua/BitTorrentClient): Go standard-library client with bencode parsing, HTTP/UDP trackers, TCP peer protocol, concurrent downloads, SHA-1 piece verification, retries, cancellation, and resume. Tested with scripted peers, Go's race detector, and a local Docker swarm.
-- [HTTP/1.1 server](https://github.com/slavik-ua/httpfromtcp): Go server over raw TCP with custom request parsing, a state-aware response writer, chunked streaming, static files, and a reverse proxy that emits SHA-256 checksums in HTTP trailers.
+- [BitTorrent client](https://github.com/slavik-ua/BitTorrentClient): Go client with bencode parsing, HTTP/UDP trackers, peer protocol over TCP sockets, concurrent downloads, SHA-1 piece verification, retries, cancellation, and resume. Tested with scripted peers, Go's race detector, and a local tracker and Transmission peers. The local test network runs with Docker Compose.
+- [HTTP/1.1 server](https://github.com/slavik-ua/httpfromtcp): Go server using TCP sockets with custom request parsing, a state-aware response writer, chunked responses, static files, and a streaming proxy that emits a SHA-256 checksum in HTTP trailers.
 
 ## Open-source contribution
 
