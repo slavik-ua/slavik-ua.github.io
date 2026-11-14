@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.log
+playwright-report/
+test-results/
+
+# Original downloaded screenshots; the site serves optimized WebP copies.
+assets/obminnik-dashboard.png
+assets/obminnik-depth.png

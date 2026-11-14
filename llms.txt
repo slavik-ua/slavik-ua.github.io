@@ -1,0 +1,33 @@
+# Viacheslav-Illia Detsyk
+
+> Third-year Informatics and Computer Engineering student at FEUP, University of Porto. Based in Porto, Portugal. Seeking a backend engineering internship.
+
+## Education
+
+- B.S. in Informatics and Computer Engineering, FEUP.
+- February 2024 to January 2028 (expected graduation).
+- Current average: 16/20.
+
+## Selected personal projects
+
+- [OBMINNIK](https://github.com/slavik-ua/obminnik): Go trading platform with a limit order book, price-time priority, partial fills, cancellation, fixed-point settlement, PostgreSQL transactions, an outbox relay, Kafka-compatible Redpanda, Redis Pub/Sub, WebSockets, Prometheus, Grafana, and a Next.js dashboard.
+- [BitTorrent client](https://github.com/slavik-ua/BitTorrentClient): Go standard-library client with bencode parsing, HTTP/UDP trackers, TCP peer protocol, concurrent downloads, SHA-1 piece verification, retries, cancellation, and resume. Tested with scripted peers, Go's race detector, and a local Docker swarm.
+- [HTTP/1.1 server](https://github.com/slavik-ua/httpfromtcp): Go server over raw TCP with custom request parsing, a state-aware response writer, chunked streaming, static files, and a reverse proxy that emits SHA-256 checksums in HTTP trailers.
+
+## Open-source contribution
+
+- [Merged Linux kernel patch](https://github.com/torvalds/linux/commit/05998d64426a8f245f267bafee434d8cb00a5cb6): added a DMI quirk to the AMD ACP6x audio driver to enable the built-in microphone on Acer Nitro AN16-41 laptops. Merged November 2026. This was a small hardware compatibility change.
+
+## Skills
+
+- Languages: Go, Python, Java, SQL, C/C++, TypeScript/JavaScript.
+- Backend: PostgreSQL, Redis, Kafka/Redpanda, HTTP/REST, WebSockets, sqlc.
+- Tools: Docker, Linux, Git, Prometheus, Grafana.
+
+## Links and contact
+
+- [Portfolio](https://slavik-ua.github.io/)
+- [Resume PDF](https://slavik-ua.github.io/assets/viacheslav-illia-detsyk-resume.pdf)
+- [GitHub](https://github.com/slavik-ua)
+- [LinkedIn](https://linkedin.com/in/viacheslav-illia-detsyk)
+- Email: detsykvyacheslav@gmail.com
