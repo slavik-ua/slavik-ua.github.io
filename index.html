@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://slavik-ua.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Viacheslav-Illia Detsyk — Backend &amp; Systems">
-  <meta property="og:description" content="From raw TCP to reliable backends. Go projects, network protocols, and a merged Linux kernel fix.">
+  <meta property="og:description" content="From raw TCP to reliable systems. Go projects, network protocols, and a merged Linux kernel fix.">
   <meta property="og:url" content="https://slavik-ua.github.io/">
   <meta property="og:image" content="https://slavik-ua.github.io/assets/social-card.png">
   <meta property="og:image:alt" content="Viacheslav-Illia Detsyk. Backend systems, network protocols, and Go.">
@@ -49,24 +49,24 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header"><div class="container header-inner">
-    <a class="identity" href="#top"><span class="identity-mark" aria-hidden="true">v<span>/</span></span><span class="identity-name">Viacheslav-Illia<br> <strong>Detsyk</strong></span></a>
+    <a class="identity" href="#top"><span class="identity-name">Viacheslav-Illia Detsyk</span></a>
     <nav class="nav-links" id="navigation" aria-label="Main navigation"><a href="#work">Work</a><a href="#open-source">Open source</a><a href="#about">About</a><a href="#contact">Contact <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a></nav>
+    <div class="header-profile" hidden><button id="copy-profile" type="button" class="button button-primary header-copy" hidden><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy profile for AI</button><span id="profile-status" role="status"></span></div>
     <div class="header-controls"><button id="theme-toggle" class="icon-button" type="button" aria-label="Switch theme" title="Switch theme" hidden><svg class="icon theme-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="icon theme-moon" aria-hidden="true"><use href="#i-moon"/></svg></button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <svg class="icon " aria-hidden="true"><use href="#i-menu"/></svg></button></div>
   </div></header>
 
   <main id="main">
     <section class="hero container" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="orange-dot" aria-hidden="true"></span> BACKEND &amp; SYSTEMS · PORTO, PT</p>
-        <h1 id="hero-title">From raw TCP<br>to reliable<br><span>backends.</span></h1>
+        <p class="eyebrow">BACKEND &amp; SYSTEMS · PORTO, PT</p>
+        <h1 id="hero-title">From raw TCP<br>to reliable<br><span>systems.</span></h1>
         <p class="hero-intro">I’m Viacheslav-Illia, a third-year engineering student at FEUP. I build in Go, explore how network protocols work, and care about getting the details right.</p>
         <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="text-link" href="assets/viacheslav-illia-detsyk-resume.pdf" download>Download résumé <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a></div>
         <p class="availability"><span aria-hidden="true"></span> Seeking a backend engineering internship</p>
-        <div class="profile-utility"><button id="copy-profile" type="button" class="utility-button" hidden><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy profile for AI</button><a href="llms.txt">Plain-text profile <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><span id="profile-status" role="status"></span></div>
       </div>
       <figure class="hero-portrait">
         <img src="assets/portrait.webp" width="960" height="720" alt="Portrait of Viacheslav-Illia Detsyk against a red background." fetchpriority="high" decoding="async">
-        <span class="photo-grid" aria-hidden="true"></span><span class="photo-orbit" aria-hidden="true"></span><span class="photo-corner corner-top" aria-hidden="true"></span><span class="photo-corner corner-bottom" aria-hidden="true"></span>
+        <span class="photo-corner corner-top" aria-hidden="true"></span><span class="photo-corner corner-bottom" aria-hidden="true"></span>
         <figcaption><span class="photo-education">FEUP · PORTO<br><strong>Computer Engineering</strong></span><span>BACKEND<br>NETWORKS<br>SYSTEMS</span></figcaption>
       </figure>
     </section>
@@ -80,7 +80,7 @@
     </div>
 
     <section class="section container" id="work" aria-labelledby="work-title">
-      <div class="section-topline"><p class="eyebrow">01 / SELECTED WORK</p><span class="mono section-aside">PROTOCOLS. STATE. CORRECTNESS.</span></div>
+      <div class="section-topline"><p class="eyebrow">01 / SELECTED WORK</p></div>
       <div class="section-heading"><h2 id="work-title">Below the interface.</h2><p>Personal projects exploring the parts users don’t see.</p></div>
 
       <article class="featured-project" aria-labelledby="obminnik-title">
@@ -131,28 +131,9 @@
     </section>
 
     <section class="open-source-section" id="open-source" aria-labelledby="oss-title">
-      <div class="container">
-        <div class="section-topline"><p class="eyebrow">02 / OPEN SOURCE</p><span class="mono merged-label"><svg class="icon " aria-hidden="true"><use href="#i-merge"/></svg> MERGED UPSTREAM · NOV 2026</span></div>
-        <div class="oss-grid">
-          <div class="oss-copy">
-            <h2 id="oss-title">A small patch.<br>A working <span>microphone.</span></h2>
-            <p class="oss-lead">Linux kernel · AMD audio driver</p>
-            <p>The built-in microphone on the Acer Nitro AN16-41 wasn’t working with the stock driver. I added a DMI quirk so the existing AMD ACP6x driver could register the microphone card for this model.</p>
-            <p>The fix is now merged into upstream Linux.</p>
-            <a class="button button-outline" href="https://github.com/torvalds/linux/commit/05998d64426a8f245f267bafee434d8cb00a5cb6">Read the merged patch <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <div class="patch-panel">
-            <div class="patch-heading mono"><span>sound/soc/amd/yc/acp6x-mach.c</span><span class="patch-count">+7</span></div>
-            <pre tabindex="0" role="region" aria-label="Seven added lines in the Linux audio driver; scroll horizontally to read"><code><span class="diff-line">+ {</span>
-<span class="diff-line">+   .driver_data = &amp;acp6x_card,</span>
-<span class="diff-line">+   .matches = {</span>
-<span class="diff-line">+     DMI_MATCH(DMI_BOARD_VENDOR, "RB"),</span>
-<span class="diff-line">+     DMI_MATCH(DMI_PRODUCT_NAME, "Nitro AN16-41"),</span>
-<span class="diff-line">+   }</span>
-<span class="diff-line">+ },</span></code></pre>
-            <div class="patch-footer"><span class="mono">05998d6</span><span>Hardware compatibility, one model at a time.</span></div>
-          </div>
-        </div>
+      <div class="container oss-inner">
+        <div><p class="eyebrow">02 / OPEN SOURCE</p><h2 id="oss-title">Linux kernel</h2></div>
+        <div class="oss-detail"><p>Added a DMI quirk to the AMD ACP6x audio driver to enable the built-in microphone on Acer Nitro AN16-41 laptops. Merged upstream in November 2026.</p><a class="text-link" href="https://github.com/torvalds/linux/commit/05998d64426a8f245f267bafee434d8cb00a5cb6">View the merged contribution <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
       </div>
     </section>
 
@@ -181,6 +162,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="footer-name" href="#top">Viacheslav-Illia Detsyk<span class="title-dot">.</span></a><p>Porto, Portugal <span aria-hidden="true">/</span> <span id="year">2026</span></p><div class="footer-links"><a href="https://github.com/slavik-ua"><svg class="icon " aria-hidden="true"><use href="#i-github"/></svg> GitHub</a><a href="https://linkedin.com/in/viacheslav-illia-detsyk"><svg class="icon " aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a><a href="assets/viacheslav-illia-detsyk-resume.pdf" download><svg class="icon " aria-hidden="true"><use href="#i-down"/></svg> Résumé</a></div></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><a class="footer-name" href="#top">Viacheslav-Illia Detsyk</a><p>Porto, Portugal <span aria-hidden="true">/</span> <span id="year">2026</span></p><div class="footer-links"><a href="https://github.com/slavik-ua"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a><a href="https://linkedin.com/in/viacheslav-illia-detsyk"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a><a href="assets/viacheslav-illia-detsyk-resume.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg> Résumé</a><a href="llms.txt">Text profile</a></div></div></footer>
 </body>
 </html>

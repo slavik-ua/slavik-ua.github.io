@@ -1,6 +1,6 @@
 # Viacheslav-Illia Detsyk — personal site
 
-A buildless portfolio for backend and systems internships. Plain HTML, CSS, and JavaScript; prepared for GitHub Pages at **https://slavik-ua.github.io/**. No framework, external fonts, icon package, or runtime dependencies.
+A buildless portfolio for backend and systems internships. Plain HTML, CSS, and JavaScript; published on GitHub Pages at **https://slavik-ua.github.io/**. No framework, external fonts, icon package, or runtime dependencies.
 
 ## Preview locally
 
@@ -25,21 +25,21 @@ Push changes to `main` to update the site. GitHub can take up to ten minutes to 
 - `script.js`: theme selection, mobile navigation, and email/profile clipboard enhancement. The first visit follows the system theme; an explicit choice is saved locally and synchronized across tabs. Storage failures do not prevent theme switching.
 - `assets/viacheslav-illia-detsyk-resume.pdf`: current résumé. Recompile `../basic-resume/main.typ` and replace this copy when updating it from the résumé workspace.
 - `assets/obminnik-depth.webp`: optimized actual screenshot from the OBMINNIK project.
-- `assets/portrait.webp`: optimized user-supplied portrait, shown beside the introduction. The grid and orange treatment use CSS.
+- `assets/portrait.webp`: optimized user-supplied portrait, shown beside the introduction with text and rectangular corner markers.
 - `llms.txt`: a factual plain-text profile copied by the “Copy profile for AI” button. Update it alongside visible copy when facts change.
 - `PLAN.md`: content, design, implementation, and verification plan.
 
 All core content and links are available without JavaScript, including the native expandable engineering notes. Without JavaScript the theme follows the system preference. Images use explicit dimensions; there are no decorative diagrams or animation loops.
 
-The hero portrait is loaded eagerly with high fetch priority; the project screenshot is lazy-loaded. Main page assets (HTML, CSS, JavaScript, favicon, portrait, and dashboard screenshot) total approximately 118 KB before compression. The résumé and social preview image are separate resources.
+The hero portrait is loaded eagerly with high fetch priority; the project screenshot is lazy-loaded. Main page assets (HTML, CSS, JavaScript, favicon, portrait, and dashboard screenshot) total approximately 115 KB before compression. The résumé and social preview image are separate resources.
 
 ## Validation
 
 Verified in Chrome on 14 November 2026:
 
-- Both themes at nine widths from 320 to 1440 pixels, with no page overflow.
+- Both themes at twelve widths from 320 to 1440 pixels, with no page overflow.
 - Theme restoration, system preference changes, cross-tab synchronization, and blocked-storage fallback.
-- Profile/email copying, project and résumé links, mobile navigation, keyboard Escape, and expandable notes.
+- Profile/email copying, three-second profile confirmation dismissal, outside-click/Escape dismissal, project and résumé links, mobile navigation, and expandable notes.
 - JavaScript-disabled content and navigation, and reduced-motion behavior.
 - Automated accessibility scans on desktop and mobile in both themes: zero reported WCAG A/AA violations.
 - No external runtime requests or browser errors.

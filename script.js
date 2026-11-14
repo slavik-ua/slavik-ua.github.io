@@ -61,7 +61,7 @@ document.addEventListener("keydown", event => {
 document.addEventListener("click", event => {
   if (!event.target.closest(".header-inner")) closeMenu();
 });
-window.matchMedia("(min-width: 641px)").addEventListener("change", closeMenu);
+window.matchMedia("(min-width: 981px)").addEventListener("change", closeMenu);
 
 const copyButton = document.querySelector("#copy-email");
 if (navigator.clipboard && window.isSecureContext) {
@@ -80,17 +80,34 @@ if (navigator.clipboard && window.isSecureContext) {
 const profileButton = document.querySelector("#copy-profile");
 if (navigator.clipboard && window.isSecureContext) {
   profileButton.hidden = false;
-  profileButton.addEventListener("click", async () => {
-    const status = document.querySelector("#profile-status");
-    profileButton.disabled = true;
+  profileButton.parentElement.hidden = false;
+  const status = document.querySelector("#profile-status");
+  let statusTimer;
+  function dismissStatus() {
+    clearTimeout(statusTimer);
     status.textContent = "";
+  }
+  function showStatus(message) {
+    dismissStatus();
+    status.textContent = message;
+    statusTimer = setTimeout(dismissStatus, 3000);
+  }
+  document.addEventListener("click", event => {
+    if (!event.target.closest(".header-profile")) dismissStatus();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") dismissStatus();
+  });
+  profileButton.addEventListener("click", async () => {
+    profileButton.disabled = true;
+    dismissStatus();
     try {
       const response = await fetch("llms.txt");
       if (!response.ok) throw new Error("Profile unavailable");
       await navigator.clipboard.writeText(await response.text());
-      status.textContent = "Profile and source links copied.";
+      showStatus("Profile and source links copied.");
     } catch {
-      status.textContent = "Couldn’t copy. You can open the plain-text profile instead.";
+      showStatus("Couldn’t copy. You can open the plain-text profile instead.");
     } finally {
       profileButton.disabled = false;
     }
