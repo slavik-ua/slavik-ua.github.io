@@ -22,6 +22,7 @@ Give backend and systems internship reviewers a quick introduction and concrete 
 - Use small transitions only when reduced motion is not requested.
 - Primary buttons use white labels on a deeper orange for readable contrast. No ambient glow near the portrait. The copy confirmation clears after three seconds and on outside click or Escape.
 - Responsive navigation, accessible keyboard interaction, clear focus states, semantic headings, and readable contrast.
+- Use 16 px main reading text at the browser's default size, larger controls and supporting text, and rem-based type that respects browser font preferences. Keep a bounded 1280 px desktop layout and support reflow at zoomed and phone widths.
 
 ## Implementation and hosting
 

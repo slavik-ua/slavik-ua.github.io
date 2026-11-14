@@ -37,7 +37,7 @@ The hero portrait is loaded eagerly with high fetch priority; the project screen
 
 Verified in Chrome on 14 November 2026:
 
-- Both themes at twelve widths from 320 to 1440 pixels, with no page overflow.
+- Both themes at fourteen widths from 320 to 2560 pixels, with no page overflow. Checked a 200% zoom equivalent and larger default browser text on desktop and mobile.
 - Theme restoration, system preference changes, cross-tab synchronization, and blocked-storage fallback.
 - Profile/email copying, three-second profile confirmation dismissal, outside-click/Escape dismissal, project and résumé links, mobile navigation, and expandable notes.
 - JavaScript-disabled content and navigation, and reduced-motion behavior.
