@@ -1,7 +1,5 @@
 "use strict";
 
-document.documentElement.classList.add("js");
-
 const root = document.documentElement;
 const themeButton = document.querySelector("#theme-toggle");
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -35,33 +33,6 @@ window.addEventListener("storage", event => {
     applyTheme(explicitTheme || (systemTheme.matches ? "dark" : "light"));
   }
 });
-
-const menuToggle = document.querySelector(".menu-toggle");
-const navigation = document.querySelector("#navigation");
-function closeMenu() {
-  menuToggle.setAttribute("aria-expanded", "false");
-  navigation.classList.remove("is-open");
-  menuToggle.querySelector("use").setAttribute("href", "#i-menu");
-}
-menuToggle.addEventListener("click", () => {
-  const opening = menuToggle.getAttribute("aria-expanded") !== "true";
-  menuToggle.setAttribute("aria-expanded", String(opening));
-  navigation.classList.toggle("is-open", opening);
-  menuToggle.querySelector("use").setAttribute("href", opening ? "#i-close" : "#i-menu");
-});
-navigation.addEventListener("click", event => {
-  if (event.target.closest("a")) closeMenu();
-});
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
-    closeMenu();
-    menuToggle.focus();
-  }
-});
-document.addEventListener("click", event => {
-  if (!event.target.closest(".header-inner")) closeMenu();
-});
-window.matchMedia("(min-width: 981px)").addEventListener("change", closeMenu);
 
 const copyButton = document.querySelector("#copy-email");
 if (navigator.clipboard && window.isSecureContext) {
