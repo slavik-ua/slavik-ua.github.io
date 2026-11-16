@@ -323,7 +323,7 @@ nav kbd { border: 1px solid var(--line); padding: 1px 4px; margin-left: 3px; bor
 .skills-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding-top: 26px; border-top: 1px solid var(--line); }
 .skills-list dt { font: .8125rem/1.8 var(--mono); color: var(--ink); margin-bottom: 12px; }
 .skills-list dd { margin: 0; font-size: .9375rem; line-height: 1.9; color: var(--muted); }
-.portrait-stage { width: min(68vw, 980px); height: 88%; right: -10vw; }
+.portrait-stage { width: min(52vw, 800px); height: min(80svh, 62.4vw, 900px); right: -10vw; top: 50%; bottom: auto; transform: translateY(-50%); opacity: 1; mask-image: none; }
 .footer-links a { display: inline-flex; align-items: center; gap: 8px; }
 .footer-links .icon { width: 16px; height: 16px; }
 #shortcut-toggle { color: var(--muted); font: inherit; min-height: 32px; }
@@ -341,7 +341,7 @@ nav kbd { border: 1px solid var(--line); padding: 1px 4px; margin-left: 3px; bor
   .profile-scene { min-height: 0; }
   .profile-inner { min-height: 0; padding-bottom: 24px; }
   .profile-next { position: static; display: block; width: max-content; transform: none; margin: 0 auto 24px; }
-  .portrait-stage { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 4 / 3; max-width: 440px; margin-inline: 0; }
+  .portrait-stage { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 4 / 3; max-width: 440px; margin-inline: 0; transform: none; mask-image: none; }
   .skills-section .section-heading { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
   .skills-list { grid-template-columns: 1fr; gap: 0; padding-top: 0; }
   .skills-list > div { display: grid; grid-template-columns: 95px 1fr; gap: 18px; padding-block: 18px; border-bottom: 1px solid var(--line); }
