@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://slavik-ua.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Viacheslav-Illia Detsyk — Backend &amp; Systems">
-  <meta property="og:description" content="From TCP to reliable systems. Go projects, network protocols, and a merged Linux kernel fix.">
+  <meta property="og:description" content="Backend and systems projects in Go, network protocols, and a merged Linux kernel fix.">
   <meta property="og:url" content="https://slavik-ua.github.io/">
   <meta property="og:image" content="https://slavik-ua.github.io/assets/social-card.png">
   <meta property="og:image:alt" content="Viacheslav-Illia Detsyk. Backend systems, network protocols, and Go.">
@@ -21,150 +21,76 @@
       try { saved = localStorage.getItem('portfolio-theme'); } catch {}
       const theme = saved === 'light' || saved === 'dark' ? saved : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.dataset.theme = theme;
-      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0A0A0C' : '#FDFCF9';
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0A0A0C' : '#faf9f6';
     })();
   </script>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=scene-preview-7">
+  <script src="script.js?v=scene-preview-7" defer></script>
 </head>
 <body>
-  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
-    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M5 17v4h14v-4"/></symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13.1A8.7 8.7 0 0 1 10.9 3.5 8.7 8.7 0 1 0 20.5 13.1Z"/></symbol>
-    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6-1.6 6-6A4.7 4.7 0 0 0 18.7 6 4.3 4.3 0 0 0 18.6 3S17.4 2.6 15 4a13.4 13.4 0 0 0-6 0C6.6 2.6 5.4 3 5.4 3A4.3 4.3 0 0 0 5.3 6 4.7 4.7 0 0 0 4 9.3c0 4.4 2.7 5.6 6 6A3.5 3.5 0 0 0 9 18v4"/></symbol>
-    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10v7M7.5 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></symbol>
-    <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="2" y="16" width="6" height="5" rx="1"/><rect x="16" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></symbol>
-    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3m6 0h5"/></symbol>
-    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 3 6-7m-5 0h5v5"/></symbol>
-    <symbol id="i-merge" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v10M18 7c0 7-12 2-12 8"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-  </defs></svg>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header"><div class="container header-inner">
-    <a class="identity" href="#top"><span class="identity-name">Viacheslav-Illia Detsyk</span></a>
-    <nav class="nav-links" id="navigation" aria-label="Main navigation"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#open-source">Open source</a><a href="#about">About</a><a href="#contact">Contact <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a></nav>
-    <div class="header-profile" hidden><button id="copy-profile" type="button" class="button button-primary header-copy" hidden><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy profile for AI</button><span id="profile-status" role="status"></span></div>
-    <div class="header-controls"><button id="theme-toggle" class="icon-button" type="button" aria-label="Switch theme" title="Switch theme" hidden><svg class="icon theme-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="icon theme-moon" aria-hidden="true"><use href="#i-moon"/></svg></button></div>
-  </div></header>
-
-  <main id="main">
-    <section class="hero container" id="top" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">BACKEND &amp; SYSTEMS · PORTO, PT</p>
-        <h1 id="hero-title">From TCP<br>to reliable<br><span>systems.</span></h1>
-        <p class="hero-intro">I’m Viacheslav-Illia, a third-year engineering student at FEUP. I build in Go, explore how network protocols work, and care about getting the details right.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="text-link" href="assets/viacheslav-illia-detsyk-resume.pdf" download>Download résumé <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a></div>
-        <p class="availability"><span aria-hidden="true"></span> Seeking a backend engineering internship</p>
-      </div>
-      <figure class="hero-portrait">
-        <img src="assets/portrait.webp" width="960" height="720" alt="Portrait of Viacheslav-Illia Detsyk against a red background." fetchpriority="high" decoding="async">
-        <span class="photo-corner corner-top" aria-hidden="true"></span><span class="photo-corner corner-bottom" aria-hidden="true"></span>
-        <figcaption><span class="photo-education">FEUP · PORTO<br><strong>Computer Engineering</strong></span><span>BACKEND<br>NETWORKS<br>SYSTEMS</span></figcaption>
-      </figure>
-    </section>
-
-    <div class="facts-strip">
-      <div class="container facts-inner">
-        <p><span class="fact-label">STUDYING AT</span><span>FEUP, University of Porto</span></p>
-        <p><span class="fact-label">WORKING WITH</span><span>Go · PostgreSQL · Redis · Kafka</span></p>
-        <a href="#open-source"><span class="fact-label">CONTRIBUTED TO</span><span>Linux kernel <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-      </div>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M5 17v4h14v-4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13.1A8.7 8.7 0 0 1 10.9 3.5 8.7 8.7 0 1 0 20.5 13.1Z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6-1.6 6-6A4.7 4.7 0 0 0 18.7 6 4.3 4.3 0 0 0 18.6 3S17.4 2.6 15 4a13.4 13.4 0 0 0-6 0C6.6 2.6 5.4 3 5.4 3A4.3 4.3 0 0 0 5.3 6 4.7 4.7 0 0 0 4 9.3c0 4.4 2.7 5.6 6 6A3.5 3.5 0 0 0 9 18v4"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10v7M7.5 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+<section class="landing scene" id="top" aria-labelledby="hero-title" tabindex="-1">
+  <figure class="orbit-art" aria-hidden="true"><img src="assets/ascii/orbit-poster.webp" alt="" class="orbit-poster" width="1200" height="600"><canvas id="orbit-canvas" width="1600" height="800"></canvas></figure>
+  <div class="landing-shade" aria-hidden="true"></div>
+  <div class="scene-container landing-inner">
+<header class="site-header">
+  <a class="identity" href="#top" data-shortcut="t" data-shortcut-label="Back to top"><span>Viacheslav-Illia Detsyk</span><kbd class="shortcut-key" aria-hidden="true" hidden>T</kbd></a>
+  <nav aria-label="Main navigation"><a href="#work" data-shortcut="w" data-shortcut-label="Work" aria-label="Work"><span data-scramble>Work</span><kbd class="shortcut-key" aria-hidden="true" hidden>W</kbd></a><a href="#skills" data-shortcut="s" data-shortcut-label="Skills" aria-label="Skills"><span data-scramble>Skills</span><kbd class="shortcut-key" aria-hidden="true" hidden>S</kbd></a><a href="#open-source" data-shortcut="o" data-shortcut-label="Open Source" aria-label="Open Source"><span data-scramble>Open Source</span><kbd class="shortcut-key" aria-hidden="true" hidden>O</kbd></a><a href="#about" data-shortcut="a" data-shortcut-label="About" aria-label="About"><span data-scramble>About</span><kbd class="shortcut-key" aria-hidden="true" hidden>A</kbd></a><a href="#contact" data-shortcut="c" data-shortcut-label="Contact" aria-label="Contact"><span data-scramble>Contact</span><kbd class="shortcut-key" aria-hidden="true" hidden>C</kbd></a></nav>
+  <div class="header-actions"><div class="header-profile" hidden><button id="copy-profile" class="primary" hidden>Copy profile for AI <span aria-hidden="true">↗</span></button><span id="profile-status" role="status"></span></div><button id="theme-toggle" class="utility-button" type="button" hidden><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></button></div>
+</header>
+    <div class="availability-ticker"><p class="sr-only">Seeking a backend or infrastructure engineering internship.</p><div class="ticker-track" aria-hidden="true"><div class="ticker-group"><span>Seeking a backend or infrastructure engineering internship.</span><span aria-hidden="true" class="ticker-separator">+</span><span>Seeking a backend or infrastructure engineering internship.</span><span aria-hidden="true" class="ticker-separator">+</span></div><div class="ticker-group"><span>Seeking a backend or infrastructure engineering internship.</span><span aria-hidden="true" class="ticker-separator">+</span><span>Seeking a backend or infrastructure engineering internship.</span><span aria-hidden="true" class="ticker-separator">+</span></div></div></div>
+    <div class="landing-copy">
+      <h1 id="hero-title">Backend <span>&amp;</span><br>systems.</h1>
+      <p class="landing-note">Building software. Understanding what’s underneath.</p>
     </div>
+    <div class="landing-bottom"><p>Porto, Portugal</p><a class="scroll-link" href="#about"><span><span class="scroll-prefix">Scroll to </span>meet me</span><span class="scroll-arrow" aria-hidden="true">↓</span></a><a class="landing-resume" href="assets/viacheslav-illia-detsyk-resume.pdf" download>CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a></div>
+  </div>
+</section>
+<section class="profile-scene scene" id="about" aria-labelledby="profile-title" tabindex="-1">
+  <div class="scene-container profile-inner">
+    <figure class="portrait-stage"><img src="assets/portrait.webp" width="960" height="720" alt="Viacheslav-Illia Detsyk" loading="lazy" decoding="async"></figure>
+    <div class="profile-copy">
 
-    <section class="section container" id="work" aria-labelledby="work-title">
-      <div class="section-topline"><p class="eyebrow">01 / SELECTED WORK</p></div>
-      <div class="section-heading"><h2 id="work-title">Below the interface.</h2><p>Personal projects exploring the parts users don’t see.</p></div>
+      <h2 id="profile-title">Viacheslav-Illia<br>Detsyk<span class="accent">.</span></h2>
+      <p class="profile-intro">A third-year engineering student at FEUP, building in Go and exploring how network protocols work.</p>
+      <p class="type-line"><span class="prompt" aria-hidden="true">&gt; </span><span id="type-line">backend systems</span><span class="cursor" aria-hidden="true">_</span></p>
+      <dl class="profile-facts"><div class="boot-entry"><dt>studying</dt><dd>Informatics and Computer Engineering</dd></div><div class="boot-entry"><dt>graduation</dt><dd>Expected February 2028</dd></div></dl>
+      <div class="hero-actions"><a href="#work" class="primary">Explore my work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="assets/viacheslav-illia-detsyk-resume.pdf" class="quiet-link" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a></div>
+    </div>
+  </div>
+  <a class="profile-next" href="#work">[ next / selected work ↓ ]</a>
+</section>
+<div class="page-shell content-shell">
+<section class="section" id="work" aria-labelledby="work-title" tabindex="-1">
+  <div class="section-heading"><div><h2 id="work-title">Selected work.</h2></div></div>
+  <article class="project frame featured">
 
-      <article class="featured-project" aria-labelledby="obminnik-title">
-        <div class="featured-content">
-          <p class="project-type mono"><svg class="icon " aria-hidden="true"><use href="#i-chart"/></svg> EVENT-DRIVEN SYSTEMS</p>
-          <h3 id="obminnik-title">OBMINNIK<span class="title-dot">.</span></h3>
-          <p class="project-subtitle">A trading platform, from order to execution.</p>
-          <p>A Go limit order book with price-time priority, partial fills, and cancellation, connected to a live market-depth dashboard.</p>
-          <ul class="project-points">
-            <li><span>Fixed-point amounts</span>8-decimal integer amounts for balances and trade settlement.</li>
-            <li><span>Explicit event delivery</span>PostgreSQL outbox → Kafka-compatible Redpanda.</li>
-            <li><span>Visibility into the system</span>Prometheus, Grafana, Redis Pub/Sub, and WebSockets.</li>
-          </ul>
-          <div class="tags" aria-label="Technologies"><span>Go</span><span>PostgreSQL</span><span>Redpanda</span><span>Redis</span></div>
-          <a class="text-link" href="https://github.com/slavik-ua/obminnik">Explore the repository <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-        <figure class="project-visual">
-          <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span><span class="window-title">OBMINNIK / MARKET DEPTH</span></div>
-          <a href="assets/obminnik-depth.webp" aria-label="Open the full OBMINNIK market-depth screenshot"><img src="assets/obminnik-depth.webp" width="1600" height="1091" alt="OBMINNIK trading dashboard showing market depth, bid and ask orders, and trade history." loading="lazy" decoding="async"></a>
-          <figcaption><span>Actual project screenshot</span><svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></figcaption>
-        </figure>
-        <details class="engineering-notes">
-          <summary>Under the hood <span class="mono">ENGINEERING NOTES <span class="details-symbol" aria-hidden="true">+</span></span></summary>
-          <div class="notes-body">
-            <div><h4>Representing money consistently</h4><p>Prices, quantities, and balances use integers scaled by 10⁸. Keeping the same scale across the API and matching worker avoids floating-point drift and inconsistent units. Order, trade, and balance updates are batched in a PostgreSQL transaction.</p></div>
-            <div><h4>Separating persistence from delivery</h4><p>The API stores the order and outbox event together. A relay publishes pending events to Redpanda and marks them processed after successful publishing. This makes the database write and the later broker delivery separate, explicit steps.</p><a class="inline-link" href="https://github.com/slavik-ua/obminnik/tree/main/docs/adr">Read the design decisions <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-          </div>
-        </details>
-      </article>
+    <div class="project-content"><div class="project-description"><h3>OBMINNIK<span class="accent">.</span></h3><p class="project-lead">A trading platform, from order to execution.</p><p>A Go limit order book with price-time priority, partial fills, and cancellation, connected to a live market-depth dashboard.</p><p class="tags">Go <span>/</span> PostgreSQL <span>/</span> Redpanda <span>/</span> Redis</p><a class="repository-link" href="https://github.com/slavik-ua/obminnik">Explore the repository <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div><dl class="engineering-list"><div><dt>Fixed-point amounts</dt><dd>8-decimal integer amounts for balances and trade settlement.</dd></div><div><dt>Explicit event delivery</dt><dd>PostgreSQL outbox → Kafka-compatible Redpanda.</dd></div><div><dt>Visibility into the system</dt><dd>Prometheus, Grafana, Redis Pub/Sub, and WebSockets.</dd></div></dl></div>
+    <details class="engineering-notes"><summary><span>Read the engineering notes</span><span class="details-symbol" aria-hidden="true">+</span></summary><div class="notes-body"><div><h4>Representing money consistently</h4><p>Prices, quantities, and balances use integers scaled by 10⁸. Keeping the same scale across the API and matching worker avoids floating-point drift and inconsistent units. Updates are batched in a PostgreSQL transaction.</p></div><div><h4>Separating persistence from delivery</h4><p>The API stores the order and outbox event together. The relay marks an event processed after publishing succeeds.</p><a href="https://github.com/slavik-ua/obminnik/tree/main/docs/adr" class="source-link">[ design decisions ↗ ]</a></div></div></details>
+  </article>
+  <div class="project-pair">
+    <article class="project frame"><div class="project-content"><h3>BitTorrent client</h3><p>A Go client with bencode parsing, HTTP/UDP trackers, and the BitTorrent peer protocol over TCP sockets.</p><ul class="text-list"><li>Concurrent downloads and SHA-1 piece verification</li><li>Retries, cancellation, and resume from verified pieces</li><li>Scripted peer tests and local Transmission peers</li></ul><div class="project-card-footer"><p class="tags">Go <span>/</span> TCP &amp; UDP <span>/</span> Concurrency</p><a class="project-source-button" href="https://github.com/slavik-ua/BitTorrentClient" aria-label="View BitTorrent client source on GitHub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="project frame"><div class="project-content"><h3>HTTP/1.1, from TCP</h3><p>A Go server using TCP sockets, custom request parsing, and explicit response-writing order.</p><ul class="text-list"><li>Chunked responses and static file serving</li><li>A streaming proxy with SHA-256 trailers</li><li>Status → headers → body</li></ul><div class="project-card-footer"><p class="tags">Go <span>/</span> HTTP &amp; TCP <span>/</span> Streaming</p><a class="project-source-button" href="https://github.com/slavik-ua/httpfromtcp" aria-label="View HTTP server source on GitHub"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+  </div>
+</section>
+<section class="section skills-section" id="skills" aria-labelledby="skills-title" tabindex="-1">
+  <div class="section-heading"><div><h2 id="skills-title">What I build with.</h2></div><p class="section-description">Tools I use in my own projects.</p></div>
+  <dl class="skills-list"><div><dt>Languages</dt><dd>Go, Python, Java, SQL, C/C++, TypeScript / JavaScript</dd></div><div><dt>Backend</dt><dd>PostgreSQL, Redis, Kafka / Redpanda, HTTP, WebSockets, sqlc</dd></div><div><dt>Tools</dt><dd>Docker, Linux, Git, Prometheus, Grafana</dd></div></dl>
+</section>
+<section class="section oss-section" id="open-source" aria-labelledby="oss-title" tabindex="-1"><div class="oss-label"><h2 id="oss-title">Linux kernel</h2><p class="merge-label">[ merged upstream / Nov 2026 ]</p></div><div class="oss-detail"><p>Added a DMI quirk to the AMD ACP6x audio driver to enable the built-in microphone on Acer Nitro AN16-41 laptops.</p><a class="source-link" href="https://github.com/torvalds/linux/commit/05998d64426a8f245f267bafee434d8cb00a5cb6">[ view contribution 05998d6 ↗ ]</a></div></section>
+<section class="section contact-section" id="contact" aria-labelledby="contact-title" tabindex="-1"><div class="contact-frame frame"><div class="contact-copy"><h2 id="contact-title">Let’s talk <span class="accent">systems.</span></h2><p>Have a backend internship in mind? I’d like to hear about it.</p></div><div class="contact-actions"><a href="mailto:detsykvyacheslav@gmail.com" class="primary">Send me an email <span aria-hidden="true">↗</span></a><div class="email-row"><a href="mailto:detsykvyacheslav@gmail.com">detsykvyacheslav@gmail.com</a><button id="copy-email" aria-label="Copy email address" hidden>[ copy ]</button></div><span id="copy-status" role="status"></span></div></div></section>
 
-      <div class="project-pair">
-        <article class="secondary-project" aria-labelledby="torrent-title">
-          <div class="project-card-top"><span class="project-icon"><svg class="icon " aria-hidden="true"><use href="#i-network"/></svg></span><span class="project-type mono">NETWORK PROTOCOLS</span><span class="mono project-serial">02</span></div>
-          <h3 id="torrent-title">BitTorrent client</h3>
-          <p>Built a Go client with bencode parsing, HTTP/UDP trackers, and the BitTorrent peer protocol over TCP sockets.</p>
-          <p class="project-detail">Added concurrent downloads, SHA-1 piece verification, retries, cancellation, and resume. Tested with scripted peers and Go’s race detector, plus a local tracker and Transmission peers.</p>
-          <div class="project-card-bottom"><div class="tags"><span>Go</span><span>TCP / UDP</span><span>Concurrency</span></div><a class="icon-button" href="https://github.com/slavik-ua/BitTorrentClient" aria-label="View BitTorrent client source on GitHub"><svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-        </article>
-
-        <article class="secondary-project" aria-labelledby="http-title">
-          <div class="project-card-top"><span class="project-icon"><svg class="icon " aria-hidden="true"><use href="#i-terminal"/></svg></span><span class="project-type mono">PROTOCOL IMPLEMENTATION</span><span class="mono project-serial">03</span></div>
-          <h3 id="http-title">HTTP/1.1, from TCP</h3>
-          <p>Built an HTTP/1.1 server in Go using TCP sockets, with custom request parsing and explicit response-writing order.</p>
-          <p class="project-detail">Added chunked responses, static file serving, and a streaming proxy that sends a SHA-256 checksum in HTTP trailers.</p>
-          <div class="project-card-bottom"><div class="tags"><span>Go</span><span>HTTP / TCP</span><span>Streaming</span></div><a class="icon-button" href="https://github.com/slavik-ua/httpfromtcp" aria-label="View HTTP server source on GitHub"><svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container skills-section" id="skills" aria-labelledby="skills-title">
-      <p class="eyebrow">02 / TECHNICAL SKILLS</p>
-      <div class="section-heading"><h2 id="skills-title">What I build with.</h2><p>Tools I use in my own projects.</p></div>
-      <dl class="skills-list"><div><dt><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> Languages</dt><dd>Go, Python, Java, SQL, C/C++, TypeScript / JavaScript</dd></div><div><dt><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg> Backend</dt><dd>PostgreSQL, Redis, Kafka / Redpanda, HTTP, WebSockets, sqlc</dd></div><div><dt><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg> Tools</dt><dd>Docker, Linux, Git, Prometheus, Grafana</dd></div></dl>
-    </section>
-
-    <section class="open-source-section" id="open-source" aria-labelledby="oss-title">
-      <div class="container oss-inner">
-        <div><p class="eyebrow">03 / OPEN SOURCE</p><h2 id="oss-title">Linux kernel</h2></div>
-        <div class="oss-detail"><p>Added a DMI quirk to the AMD ACP6x audio driver to enable the built-in microphone on Acer Nitro AN16-41 laptops. Merged upstream in November 2026.</p><a class="text-link" href="https://github.com/torvalds/linux/commit/05998d64426a8f245f267bafee434d8cb00a5cb6">View the merged contribution <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </section>
-
-    <section class="section container about-section" id="about" aria-labelledby="about-title">
-      <p class="eyebrow">04 / A LITTLE ABOUT ME</p>
-      <div class="about-grid">
-        <div>
-          <h2 id="about-title">Curious about<br>what’s underneath.</h2>
-          <p class="about-intro">I’m Viacheslav-Illia Detsyk, studying Informatics and Computer Engineering at the University of Porto.</p>
-          <p>I learn by building software and working through the problems that come with it. My main interests are backend systems, networking, and performance.</p>
-          <p>I’m looking for a backend engineering internship where I can contribute, learn from experienced engineers, and keep getting better at building software.</p>
-          <a class="text-link" href="assets/viacheslav-illia-detsyk-resume.pdf" download>Get the full résumé <svg class="icon " aria-hidden="true"><use href="#i-down"/></svg></a>
-        </div>
-        <div class="about-record">
-          <div class="education-record"><p class="mono">EDUCATION</p><h3>FEUP · University of Porto</h3><p>B.S. in Informatics and Computer Engineering</p><p class="education-meta">Expected graduation: Feb 2028<br>Current average: 16/20</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-inner">
-        <div><p class="eyebrow">05 / GET IN TOUCH</p><h2 id="contact-title">Let’s talk <span>systems.</span></h2><p>Have a backend internship in mind? I’d like to hear about it.</p></div>
-        <div class="contact-actions"><a class="button button-primary" href="mailto:detsykvyacheslav@gmail.com"><svg class="icon " aria-hidden="true"><use href="#i-mail"/></svg> Send me an email <svg class="icon " aria-hidden="true"><use href="#i-arrow"/></svg></a><div class="email-row"><a href="mailto:detsykvyacheslav@gmail.com">detsykvyacheslav@gmail.com</a><button id="copy-email" class="icon-button" type="button" aria-label="Copy email address" hidden><svg class="icon " aria-hidden="true"><use href="#i-copy"/></svg></button></div><span id="copy-status" class="copy-status" role="status"></span></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="container footer-inner"><a class="footer-name" href="#top">Viacheslav-Illia Detsyk</a><p>Porto, Portugal <span aria-hidden="true">/</span> <span id="year">2026</span></p><div class="footer-links"><a href="https://github.com/slavik-ua"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a><a href="https://linkedin.com/in/viacheslav-illia-detsyk"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a><a href="assets/viacheslav-illia-detsyk-resume.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg> Résumé</a><a href="llms.txt">Text profile</a></div></div></footer>
+</div>
+</main>
+<div class="page-shell"><footer><p>Viacheslav-Illia Detsyk <span class="muted">/ <span id="year">2026</span></span></p><div class="footer-links"><a href="https://github.com/slavik-ua"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a><a href="https://linkedin.com/in/viacheslav-illia-detsyk"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a><a href="llms.txt">Text profile</a><a href="#top" class="back-to-top" data-shortcut="t" data-shortcut-label="Back to top">Back to top <kbd class="shortcut-key" aria-hidden="true" hidden>T</kbd></a><button id="shortcut-toggle" type="button" hidden>Shortcuts: on</button><a href="https://ascii.rest/">ASCII art credits</a></div></footer></div>
 </body>
 </html>

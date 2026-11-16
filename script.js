@@ -1,87 +1,42 @@
-"use strict";
-
+'use strict';
 const root = document.documentElement;
-const themeButton = document.querySelector("#theme-toggle");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-let explicitTheme = null;
-try {
-  const saved = localStorage.getItem("portfolio-theme");
-  if (saved === "light" || saved === "dark") explicitTheme = saved;
-} catch { /* Theme controls remain usable when storage is blocked. */ }
-
-function applyTheme(theme) {
+const themeButton = document.querySelector('#theme-toggle');
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+let explicitTheme;
+try { explicitTheme = localStorage.getItem('portfolio-theme'); } catch {}
+function applyTheme() {
+  const theme = ['light', 'dark'].includes(explicitTheme) ? explicitTheme : systemTheme.matches ? 'dark' : 'light';
   root.dataset.theme = theme;
-  const action = `Switch to ${theme === "dark" ? "light" : "dark"} theme`;
-  themeButton.setAttribute("aria-label", action);
-  themeButton.title = action;
-  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#0A0A0C" : "#FDFCF9";
+  themeButton.querySelector('use').setAttribute('href', theme === 'dark' ? '#i-sun' : '#i-moon');
+  themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+  themeButton.title = themeButton.getAttribute('aria-label');
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0a0a0c' : '#faf9f6';
 }
-
-applyTheme(explicitTheme || (systemTheme.matches ? "dark" : "light"));
+applyTheme();
 themeButton.hidden = false;
-themeButton.addEventListener("click", () => {
-  explicitTheme = root.dataset.theme === "dark" ? "light" : "dark";
-  applyTheme(explicitTheme);
-  try { localStorage.setItem("portfolio-theme", explicitTheme); } catch { /* Use the choice for this visit. */ }
+themeButton.addEventListener('click', () => {
+  explicitTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  try { localStorage.setItem('portfolio-theme', explicitTheme); } catch {}
+  applyTheme();
 });
-systemTheme.addEventListener("change", event => {
-  if (!explicitTheme) applyTheme(event.matches ? "dark" : "light");
-});
-window.addEventListener("storage", event => {
-  if (event.key === "portfolio-theme" || event.key === null) {
-    explicitTheme = event.newValue === "light" || event.newValue === "dark" ? event.newValue : null;
-    applyTheme(explicitTheme || (systemTheme.matches ? "dark" : "light"));
-  }
-});
-
-const copyButton = document.querySelector("#copy-email");
-if (navigator.clipboard && window.isSecureContext) {
-  copyButton.hidden = false;
-  copyButton.addEventListener("click", async () => {
-    const status = document.querySelector("#copy-status");
-    try {
-      await navigator.clipboard.writeText("detsykvyacheslav@gmail.com");
-      status.textContent = "Email address copied.";
-    } catch {
-      status.textContent = "Select the email address to copy it.";
-    }
+systemTheme.addEventListener('change', applyTheme);
+addEventListener('storage', event => { if (event.key === 'portfolio-theme' || event.key === null) { explicitTheme = event.newValue; applyTheme(); } });
+function clipboard(buttonId, statusId, getText, message) {
+  const button = document.querySelector(buttonId), status = document.querySelector(statusId);
+  if (!navigator.clipboard || !isSecureContext) return;
+  button.hidden = false;
+  if (buttonId === '#copy-profile') button.parentElement.hidden = false;
+  let timer;
+  const dismiss = () => { clearTimeout(timer); status.textContent = ''; };
+  button.addEventListener('click', async () => {
+    dismiss(); button.disabled = true;
+    try { await navigator.clipboard.writeText(await getText()); status.textContent = message; }
+    catch { status.textContent = 'Copy unavailable. Use the text profile or email link.'; }
+    finally { button.disabled = false; timer = setTimeout(dismiss, 3000); }
   });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') dismiss(); });
+  document.addEventListener('click', e => { if (!button.parentElement.contains(e.target)) dismiss(); });
 }
-
-const profileButton = document.querySelector("#copy-profile");
-if (navigator.clipboard && window.isSecureContext) {
-  profileButton.hidden = false;
-  profileButton.parentElement.hidden = false;
-  const status = document.querySelector("#profile-status");
-  let statusTimer;
-  function dismissStatus() {
-    clearTimeout(statusTimer);
-    status.textContent = "";
-  }
-  function showStatus(message) {
-    dismissStatus();
-    status.textContent = message;
-    statusTimer = setTimeout(dismissStatus, 3000);
-  }
-  document.addEventListener("click", event => {
-    if (!event.target.closest(".header-profile")) dismissStatus();
-  });
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") dismissStatus();
-  });
-  profileButton.addEventListener("click", async () => {
-    profileButton.disabled = true;
-    dismissStatus();
-    try {
-      const response = await fetch("llms.txt");
-      if (!response.ok) throw new Error("Profile unavailable");
-      await navigator.clipboard.writeText(await response.text());
-      showStatus("Profile and source links copied.");
-    } catch {
-      showStatus("Couldn’t copy. You can open the plain-text profile instead.");
-    } finally {
-      profileButton.disabled = false;
-    }
-  });
-}
-document.querySelector("#year").textContent = new Date().getFullYear();
+clipboard('#copy-profile', '#profile-status', async () => { const res = await fetch('llms.txt'); if (!res.ok) throw Error(); return res.text(); }, 'Profile and source links copied.');
+clipboard('#copy-email', '#copy-status', async () => 'detsykvyacheslav@gmail.com', 'Email address copied.');
+document.querySelector('#year').textContent = new Date().getFullYear();
