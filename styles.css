@@ -76,7 +76,9 @@ h1 > span { color: var(--orange); white-space: nowrap; }
 .section-heading { display: flex; justify-content: space-between; gap: 36px; align-items: flex-end; margin-bottom: 32px; }
 .section-heading h2 { font-size: clamp(30px, 3.1vw, 40px); letter-spacing: -.045em; font-weight: 500; margin-top: 12px; }
 .section-description { color: var(--muted); font-size: .9375rem; line-height: 1.8; max-width: 280px; }
-.project { min-width: 0; }
+.project { min-width: 0; transition: border-color 150ms ease; }
+.project:hover, .project:focus-within { border-color: color-mix(in srgb, var(--line) 80%, var(--ink)); }
+.project:is(:hover, :focus-within) .repository-link, .project:is(:hover, :focus-within) .project-source-button { color: var(--accent); border-color: var(--accent); }
 .project-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 28px; border-bottom: 1px dashed var(--line); color: var(--muted); font: .625rem/1.6 var(--mono); letter-spacing: .045em; }
 .source-link { display: inline-flex; align-items: center; min-height: 32px; color: var(--accent); font: .6875rem/1.6 var(--mono); white-space: nowrap; }
 .source-link:hover { color: var(--ink); }
@@ -124,7 +126,9 @@ details[open] > summary .details-symbol::after { content: '−'; font-size: 20px
 .contact-actions > .primary { display: flex; }
 .email-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: .6875rem/1.8 var(--mono); margin-top: 14px; }
 .email-row a { overflow-wrap: anywhere; min-width: 0; }
-.email-row button { color: var(--accent); min-height: 36px; }
+.email-copy { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 44px; color: inherit; font: inherit; text-align: left; }
+.email-copy:hover, .email-copy:focus-visible { color: var(--accent); }
+.email-address { min-width: 0; overflow-wrap: anywhere; }
 #copy-status { display: block; min-height: 18px; color: var(--muted); font: .625rem/1.8 var(--mono); }
 footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-block: 26px 32px; border-top: 1px solid var(--line); font: .6875rem/1.8 var(--mono); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 20px; color: var(--muted); }
@@ -312,6 +316,7 @@ nav kbd { border: 1px solid var(--line); padding: 1px 4px; margin-left: 3px; bor
 .hero-actions .icon { width: 18px; height: 18px; }
 .repository-link { display: inline-flex; align-items: center; gap: 14px; margin-top: 22px; padding-block: 7px; border-bottom: 1px solid var(--line); font-size: .9375rem; font-weight: 500; }
 .repository-link:hover { border-color: var(--accent); }
+.repository-link, .project-source-button { transition: color 150ms ease, border-color 150ms ease; }
 .project-pair .project, .project-pair .project-content { display: flex; flex-direction: column; }
 .project-pair .project-content { flex: 1; }
 .project-card-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; margin-top: auto; padding-top: 24px; }
@@ -353,6 +358,7 @@ nav kbd { border: 1px solid var(--line); padding: 1px 4px; margin-left: 3px; bor
 }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; width: 100%; }
+  .project, .repository-link, .project-source-button { transition: none; }
   .ticker-group { min-width: 0; width: 100%; padding: 0; white-space: normal; }
   .ticker-group + .ticker-group, .ticker-group .ticker-separator, .ticker-group > span:nth-of-type(3) { display: none; }
 }

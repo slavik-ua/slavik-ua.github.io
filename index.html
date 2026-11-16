@@ -24,14 +24,15 @@
       document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0A0A0C' : '#faf9f6';
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=scene-preview-14">
-  <script src="script.js?v=scene-preview-7" defer></script>
+  <link rel="stylesheet" href="styles.css?v=scene-preview-17">
+  <script src="script.js?v=scene-preview-16" defer></script>
   <script src="ascii-enhancements.js?v=scene-preview-7" type="module"></script>
 </head>
 <body>
 <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
   <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M5 17v4h14v-4"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13.1A8.7 8.7 0 0 1 10.9 3.5 8.7 8.7 0 1 0 20.5 13.1Z"/></symbol>
   <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6-1.6 6-6A4.7 4.7 0 0 0 18.7 6 4.3 4.3 0 0 0 18.6 3S17.4 2.6 15 4a13.4 13.4 0 0 0-6 0C6.6 2.6 5.4 3 5.4 3A4.3 4.3 0 0 0 5.3 6 4.7 4.7 0 0 0 4 9.3c0 4.4 2.7 5.6 6 6A3.5 3.5 0 0 0 9 18v4"/></symbol>
@@ -88,7 +89,7 @@
   <dl class="skills-list"><div><dt>Languages</dt><dd>Go, Python, Java, SQL, C/C++, TypeScript / JavaScript</dd></div><div><dt>Backend</dt><dd>PostgreSQL, Redis, Kafka / Redpanda, HTTP, WebSockets, sqlc</dd></div><div><dt>Tools</dt><dd>Docker, Linux, Git, Prometheus, Grafana</dd></div></dl>
 </section>
 <section class="section oss-section" id="open-source" aria-labelledby="oss-title" tabindex="-1"><div class="oss-label"><h2 id="oss-title">Linux kernel</h2><p class="merge-label">[ merged upstream / Nov 2026 ]</p></div><div class="oss-detail"><p>Added a DMI quirk to the AMD ACP6x audio driver to enable the built-in microphone on Acer Nitro AN16-41 laptops.</p><a class="source-link" href="https://github.com/torvalds/linux/commit/05998d64426a8f245f267bafee434d8cb00a5cb6">[ view contribution 05998d6 ↗ ]</a></div></section>
-<section class="section contact-section" id="contact" aria-labelledby="contact-title" tabindex="-1"><div class="contact-frame frame"><div class="contact-copy"><h2 id="contact-title">Let’s talk <span class="accent">systems.</span></h2><p>Have a backend internship in mind? I’d like to hear about it.</p></div><div class="contact-actions"><a href="mailto:detsykvyacheslav@gmail.com" class="primary">Send me an email <span aria-hidden="true">↗</span></a><div class="email-row"><a href="mailto:detsykvyacheslav@gmail.com">detsykvyacheslav@gmail.com</a><button id="copy-email" aria-label="Copy email address" hidden>[ copy ]</button></div><span id="copy-status" role="status"></span></div></div></section>
+<section class="section contact-section" id="contact" aria-labelledby="contact-title" tabindex="-1"><div class="contact-frame frame"><div class="contact-copy"><h2 id="contact-title">Let’s talk <span class="accent">systems.</span></h2><p>Have a backend internship in mind? I’d like to hear about it.</p></div><div class="contact-actions"><a href="mailto:detsykvyacheslav@gmail.com" class="primary">Send me an email <span aria-hidden="true">↗</span></a><div class="email-row"><a class="email-fallback" href="mailto:detsykvyacheslav@gmail.com">detsykvyacheslav@gmail.com</a><button id="copy-email" class="email-copy" type="button" aria-label="Copy email address" title="Copy email address" hidden><span class="email-address">detsykvyacheslav@gmail.com</span><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button></div><span id="copy-status" role="status"></span></div></div></section>
 
 </div>
 </main>

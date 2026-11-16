@@ -26,6 +26,7 @@ function clipboard(buttonId, statusId, getText, message) {
   if (!navigator.clipboard || !isSecureContext) return;
   button.hidden = false;
   if (buttonId === '#copy-profile') button.parentElement.hidden = false;
+  if (buttonId === '#copy-email') document.querySelector('.email-fallback').hidden = true;
   let timer;
   const dismiss = () => { clearTimeout(timer); status.textContent = ''; };
   button.addEventListener('click', async () => {
